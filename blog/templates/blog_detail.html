@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load blog_extras %}
+
+{% block title %} Blog {% endblock %}
+
+{% block content %}
+
+<section class="contenido">
+    <article>
+        <h1> {{body.titulo}} </h1>
+        <p> {{body.fecha}} </p>
+    </article>
+    <article> {{ body.body | convert_markdown | safe }} </article>
+</section>
+
+{% endblock %}
